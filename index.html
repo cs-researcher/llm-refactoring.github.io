@@ -1,3 +1,5 @@
+<script type="module" src="https://md-block.verou.me/md-block.js"></script>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,11 +74,118 @@
                   <span>Datasets</span>
                   </a>
                 </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-                    <embed src="static/images/llm-refactoring-plugin-example.png" width="700px"
-                           height="350"/>
-                    <p>Example of Extract Method recommendations provided by <b>EM-Assist</b> IntelliJ
-                        IDEA plugin.</p>
+
+<section class="section" id="plugin">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">EM-Assist IntelliJ IDEA Plugin</h2>
+                <div class="content has-text-justified">
+                    <md-block>
+
+                        The IntelliJ IDEA plugin, which offers recommendations for Extract Method refactoring based on
+                        the LLM's suggestions, **is available for download through the following
+                        [link](https://github.com/llm-refactoring/llm-refactoring-plugin/tree/main/plugin)**.
+
+                        <embed src="static/images/llm-refactoring-plugin-example.png" width="700px"
+                               height="350"/>
+                        <p>Example of Extract Method recommendations provided by <b>EM-Assist</b> IntelliJ
+                            IDEA plugin.</p>
+
+                        ### Requirements
+
+                        1. You need to install [IntelliJ IDEA](https://www.jetbrains.com/idea/download) 2023.1 or
+                        higher.
+                        2. Configure OpenAI key.
+
+                        ### OpenAI key configuration
+
+                        1. Sign up for OpenAI at https://beta.openai.com/signup.
+                        2. Get your OpenAI API key.
+                        3. Open IntelliJ IDEA, go to `Settings | Tools | Large Language Models` and enter your API key
+                        in the `OpenAI Key`field.
+
+                        ### Plugin installation
+
+                        1. Download an archive with the plugin via
+                        [link](https://github.com/llm-refactoring/llm-refactoring-plugin/tree/main/plugin).
+                        2. Open IntelliJ IDEA, go to `Settings-> Plugins-> Install plugin from disk` and select
+                        `llm-refactoring-plugin.zip`.
+                        3. Restart IntelliJ IDEA.
+
+                        ### Usage
+                        To use the plugin, you need to right-click on the method, select `Show Context Actions` and
+                        click on `Extract Function experiment`.
+                        The plugin will then send a request to OpenAI and await a response. Once received, it will
+                        present the suggestions in a dialog box, the corresponding code for extraction will be
+                        highlighted.
+                        To choose one of the suggestions, just right-click on it, and the plugin will automatically
+                        apply extract function refactoring.
+
+                    </md-block>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="datasets">
+    <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3">Datasets</h2>
+                <div class="content has-text-justified">
+                    <md-block>
+
+                        **Comprehensive data is accessible via the provided
+                        [link](https://github.com/llm-refactoring/llm-refactoring-plugin/tree/main/datasets)**.
+
+                        To validate our technique, we used the following datasets:
+
+                        1. _Community Corpus-A_ consists of **122** Java methods and their corresponding Extract
+                        Method refactorings collected
+                        from five open-source repositories: MyWebMart, SelfPlanner, WikiDev, JHotDraw, and JUnit.
+                        This dataset previously served as the foundation for evaluating various state-of-the-art
+                        Extract Method refactoring
+                        automation tools, including JExtract, JDeodorant, SEMI, GEMS, and REMS.
+
+                        2. _Community Corpus-B_ Silva et al. maintain an active corpus containing 448 Java methods,
+                        each accompanied by its
+                        respective extract method refactorings that open-source developers actually
+                        performed.Automatable changes represent
+                        “clean”
+                        commits in which the developers made a single type of change, i.e., performed Extract Method
+                        refactoring. We chose
+                        the
+                        latter category as our focus is on replicating the exact development scenarios where our
+                        tool only performs
+                        refactorings,
+                        it does not expand the code functionality. This resulted in **154** replicable refactorings.
+
+                        3. _Extended Corpus_: To enhance the robustness of our evaluation with a sizable oracle of
+                        actual refactorings performed
+                        by
+                        developers, we constructed Extended Corpus. To create it, we employed RefactoringMiner for
+                        detecting _Extract
+                        Method_.
+                        We ran it on highly regarded open-source repositories: IntelliJ Community Edition, and
+                        CoreNLP. After filtering to
+                        remove
+                        refactoring commits that mixed feature additions (the one-liners and the extracted methods
+                        whose body overlapped a
+                        large
+                        proportion of the host method), we retain **2,849** _Extract Methods_ from these
+                        repositories.
+
+                        Datasets details are available via the **following
+                        [link](https://github.com/llm-refactoring/llm-refactoring-plugin/tree/main#dataset-details)**.
+                    </md-block>
                 </div>
             </div>
         </div>
